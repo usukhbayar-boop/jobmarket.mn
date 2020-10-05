@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page2</title>
+    <style>
+      .logo {
+        margin: 40px 700px;
+        font-size: 50px;
+      }
+      .form {
+        width: 400px;
+        height: 400px;
+        border: 2px solid black;
+        margin: 30px 580px;
+      }
+      input {
+        width: 350px;
+        height: 30px;
+        margin: 10px;
+      }
+      label {
+        margin: 20px;
+      }
+
+      .submit {
+        width: 350px;
+        height: 40px;
+        margin: 10px;
+        border-radius: 20px;
+      }
+      span {
+        padding: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">LOGO</div>
+    <div class="form">
+      <form action="/action_page.php">
+        <label for="username">Username</label><br />
+        <input type="text" id="username" name="username" /><br />
+        <label for="pwd">Password</label><br />
+        <input type="password" id="pwd" name="pwd" /><br /><br />
+        <input class="submit" type="submit" value="Sign In" />
+      </form>
+      <hr />
+      <input
+        class="submit"
+        type="submit"
+        type="submit"
+        value="Sign in with Google"
+      />
+      <input
+        class="submit"
+        type="submit"
+        type="submit"
+        value="Sign in with Facebook"
+      />
+      <span>create new account</span>
+    </div>
+  </body>
+</html>

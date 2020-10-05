@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+    <style>
+      body {
+        background-color: lightgray;
+      }
+      .head {
+        font-size: 50px;
+      }
+      .title {
+        width: 400px;
+        height: 70px;
+        border: 2px solid black;
+        margin: 0px 550px;
+        text-align: center;
+        font-size: 30px;
+        border-radius: 25px;
+        background-color: white;
+      }
+      image {
+        border-radius: 50%;
+      }
+      .main {
+        width: 700px;
+        height: 400px;
+        border: 2px solid black;
+        margin: 60px 250px;
+        float: right;
+        overflow: auto;
+      }
+      .aboutus {
+        width: 300px;
+        height: 30px;
+        border: 2px solid black;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+        background-color: white;
+      }
+      .similars {
+        width: 280px;
+        height: 300px;
+        border: 2px solid black;
+        margin: 30px;
+        background-color: white;
+      }
+      .info {
+        width: 700px;
+        height: 400px;
+        border: 2px solid black;
+        float: right;
+        margin: 40px 250px;
+        background-color: white;
+      }
+      .mySlides {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">LOGO</div>
+    <div class="title">Зарын мэдээлэл</div>
+    <div class="hero">
+      <img src="newhtml.png" alt="Logo" style="width: 250px" />
+      <div class="main">
+        <img class="mySlides" src="emp1.jpg" width="700" height="400" />
+        <img class="mySlides" src="emp2.jpg" width="700" height="400" />
+        <img class="mySlides" src="image3.jpg" width="700" height="400" />
+
+        <button
+          class="w3-button w3-black w3-display-left"
+          onclick="plusDivs(-1)"
+        >
+          &#10094;
+        </button>
+        <button
+          class="w3-button w3-black w3-display-right"
+          onclick="plusDivs(1)"
+        >
+          &#10095;
+        </button>
+      </div>
+      <div class="aboutus">Бидний тухай</div>
+      <div class="aboutus">Холбоо барих</div>
+      <div class="info">Ажлын байрны мэдээлэл</div>
+      <div class="similars">Ижил төстэй зарууд</div>
+    </div>
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
