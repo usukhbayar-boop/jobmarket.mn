@@ -3,115 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Page</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        background-color: lightgray;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("11.png");
       }
-      .head {
-        font-size: 50px;
-      }
-      .title {
-        width: 400px;
-        height: 70px;
-        border: 2px solid black;
-        margin: 0px 550px;
-        text-align: center;
+      header {
         font-size: 30px;
-        border-radius: 25px;
-        background-color: white;
       }
-      image {
-        border-radius: 50%;
+      /* Column container */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
       }
+
+      /* Create two unequal columns that sits next to each other */
+      /* Sidebar/left column */
+      .side {
+        flex: 30%;
+        padding: 20px;
+      }
+
+      /* Main column */
       .main {
-        width: 700px;
-        height: 400px;
-        border: 2px solid black;
-        margin: 60px 250px;
-        float: right;
-        overflow: auto;
+        flex: 70%;
+        padding: 20px;
       }
-      .aboutus {
-        width: 300px;
-        height: 30px;
-        border: 2px solid black;
-        border-radius: 20px;
+
+      /* Fake image, just for this example */
+      .fakeimg {
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 20px;
         text-align: center;
-        font-size: 20px;
-        margin: 20px;
-        background-color: white;
       }
+
+      .image-container {
+        background-color: white;
+        width: 80%;
+        height: 400px;
+      }
+
+      .logo {
+        background-color: white;
+        border-radius: 90px;
+        height: 180px;
+        width: 180px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
       .similars {
         width: 280px;
-        height: 300px;
-        border: 2px solid black;
-        margin: 30px;
+        height: 70px;
         background-color: white;
       }
-      .info {
-        width: 700px;
-        height: 400px;
-        border: 2px solid black;
-        float: right;
-        margin: 40px 250px;
-        background-color: white;
-      }
-      .mySlides {
-        display: none;
+
+      /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 700px) {
+        .row,
+        .navbar {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="head">LOGO</div>
-    <div class="title">Зарын мэдээлэл</div>
-    <div class="hero">
-      <img src="newhtml.png" alt="Logo" style="width: 250px" />
-      <div class="main">
-        <img class="mySlides" src="emp1.jpg" width="700" height="400" />
-        <img class="mySlides" src="emp2.jpg" width="700" height="400" />
-        <img class="mySlides" src="image3.jpg" width="700" height="400" />
-
-        <button
-          class="w3-button w3-black w3-display-left"
-          onclick="plusDivs(-1)"
-        >
-          &#10094;
-        </button>
-        <button
-          class="w3-button w3-black w3-display-right"
-          onclick="plusDivs(1)"
-        >
-          &#10095;
-        </button>
+    <header>
+      LOGO
+      <h1 style="text-align: center">Зарын мэдээлэл</h1>
+    </header>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+      <div class="side">
+        <h2>About Me</h2>
+        <h5>Photo of me:</h5>
+        <div class="fakeimg" style="height: 200px">
+          <div class="logo"></div>
+        </div>
+        <h3>More Text</h3>
+        <div class="similars">Ижил төстэй зар</div>
+        <br />
+        <div class="similars">Ижил төстэй зар</div>
+        <br />
+        <div class="similars">Ижил төстэй зар</div>
       </div>
-      <div class="aboutus">Бидний тухай</div>
-      <div class="aboutus">Холбоо барих</div>
-      <div class="info">Ажлын байрны мэдээлэл</div>
-      <div class="similars">Ижил төстэй зарууд</div>
+      <div class="main">
+        <h2>Хаан Даатгал</h2>
+        <h5>Нийтлэгдсэн: Dec 7, 2020</h5>
+        <div class="image-container">
+          <img
+            src="kd-logo.png"
+            alt="khaan"
+            style="width: 100%; height: 100%"
+          />
+        </div>
+        <h3>Гүйцэтгэх үндсэн үүрэг</h3>
+        <p>
+          Шаардлагатай програм хангамж, системийн хөгжүүлэлтийг зохиомжийн дагуу
+          хийж гүйцэтгэсэн байх. Байгууллагын<br />
+          хариуцан ажиллах болон хэрэгцээнд нэвтрүүлж буй системийг хөгжүүлэх,
+          ашиглалатанд хүлээлгэн өгөх.
+        </p>
+        <h3>Ажлын байранд тавигдах шаардлага</h3>
+        <p>Програм зохиох хэл, хөгжүүлэлтийн арга барил эзэмшсэн</p>
+        <p>
+          Техникийн баримт бичиг боловсруулах, мэдээлэл технологийн чиглэлээр
+          англи болон бусад гадаад хэлээр мэдээлэл<br />
+          авах
+        </p>
+        <p>Захидал боловсруулах, мэдээ, тайлан бэлдэх</p>
+        <p></p>
+        <h3>Бусад</h3>
+        <p><b>Байршил: Улаанбаатар хот, Сүхбаатар дүүрэг</b></p>
+        <p><b>Салбар: Даатгал</b></p>
+        <p><b>Түвшин: Мэргэжилтэн</b></p>
+        <p><b>Цалин: 1'800'000 - 2'100'000</b></p>
+        <br />
+        <button>Анкет илгээх</button>
+        <br />
+      </div>
     </div>
-    <script>
-      var slideIndex = 1;
-      showDivs(slideIndex);
 
-      function plusDivs(n) {
-        showDivs((slideIndex += n));
-      }
-
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = x.length;
-        }
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        x[slideIndex - 1].style.display = "block";
-      }
-    </script>
+    <!-- Footer -->
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
   </body>
 </html>

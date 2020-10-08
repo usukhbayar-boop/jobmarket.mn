@@ -5,58 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5</title>
     <style>
-      .head {
-        font-size: 50px;
+      * {
+        box-sizing: border-box;
       }
-      .title {
-        width: 400px;
-        height: 70px;
-        border: 2px solid black;
-        margin: 0px 550px;
-        text-align: center;
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("11.png");
+      }
+      header {
         font-size: 30px;
-        border-radius: 25px;
+      }
+      /* Column container */
+      .row {
+        display: flex;
+        flex-wrap: wrap;
       }
 
-      img {
-        border-radius: 50%;
+      /* Create two unequal columns that sits next to each other */
+      /* Sidebar/left column */
+      .side {
+        flex: 30%;
+        padding: 20px;
       }
 
+      /* Main column */
       .main {
-        width: 700px;
-        height: 600px;
-        border: 2px solid black;
-        margin: 60px 250px;
-        float: right;
-        overflow: auto;
+        flex: 70%;
+        padding: 20px;
       }
-      .post {
-        width: 600px;
-        height: 60px;
-        border: 2px solid black;
+
+      /* Fake image, just for this example */
+      .fakeimg {
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 20px;
+        text-align: center;
+      }
+      .card {
+        width: 80%;
+        height: 80px;
+        background-color: white;
         margin: 20px;
-        border-radius: 25px;
-        font-size: 30px;
-        padding: 5px;
+        border-radius: 20px;
+      }
+
+      .logo {
+        background-color: white;
+        border-radius: 90px;
+        height: 180px;
+        width: 180px;
+      }
+
+      /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 700px) {
+        .row,
+        .navbar {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="head">LOGO</div>
-    <div class="title">Байгууллагын зарууд</div>
-    <div class="hero">
-      <img src="newhtml.png" alt="Logo" style="width: 250px" />
-      <div class="main">
-        <div class="post">Ажлын зар 1</div>
-        <div class="post">Ажлын зар 2</div>
-        <div class="post">Ажлын зар 3</div>
-        <div class="post">Ажлын зар 4</div>
-        <div class="post">Ажлын зар 5</div>
-        <div class="post">Ажлын зар 6</div>
-        <div class="post">Ажлын зар 6</div>
-        <div class="post">Ажлын зар 6</div>
-        <div class="post">Ажлын зар 6</div>
+    <header>
+      LOGO
+      <h1 style="text-align: center">Байгууллагын зарууд</h1>
+    </header>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+      <div class="side">
+        <div class="fakeimg">
+          <div class="logo">Image</div>
+        </div>
+        <h3>Бидэнтэй холбогдох</h3>
+        <p>Утас: 7092121</p>
+        <p>Факс: 2132323</p>
+        <p>И-Мейл: abc@z.com</p>
       </div>
+      <div class="main">
+        <div class="card">Ажлын байрны зар</div>
+        <div class="card">Ажлын байрны зар</div>
+        <div class="card">Ажлын байрны зар</div>
+        <div class="card">Ажлын байрны зар</div>
+        <div class="card">Ажлын байрны зар</div>
+        <div class="card">Ажлын байрны зар</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <h2>Footer</h2>
     </div>
   </body>
 </html>
