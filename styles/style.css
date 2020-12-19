@@ -1,8 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
+  padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #efefef;
 }
@@ -10,80 +8,109 @@ body {
 .topnav {
   overflow: hidden;
   background-color: white;
-  border: 1px solid black;
-  border-radius: 25px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
   height: 60px;
-  width: 100%;
-  padding: 15px 30px;
 }
 
-img {
-  border-radius: 50px;
-}
-
-/* Column container */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 30%;
-  padding: 20px;
-}
-
-/* Main column */
-.main {
-  flex: 70%;
-  padding: 20px;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
+.topnav a {
+  float: left;
+  color: black;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
-.card {
-  width: 80%;
-  height: 80px;
+
+.signin {
+  float: right;
+  padding-right: 80px;
+  padding-top: 15px;
+}
+input[type="search"] {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin: 40px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
   background-color: white;
-  margin: 20px;
+  background-image: url("/assets/icons/loupe.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+select {
+  width: 230px;
+  height: 30px;
+  margin: 10px 60px;
   border-radius: 20px;
 }
 
-.logo {
+nav {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+header {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.one {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.three {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.cards {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: 1px solid black;
+  height: 80px;
+  width: 100%;
+  border-radius: 20px;
+  margin: 20px;
   background-color: white;
-  border-radius: 90px;
-  height: 180px;
-  width: 180px;
 }
 
-span {
-  font-weight: bold;
-  color: rgb(71, 71, 226);
-  font-size: 25px;
+.companies {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
 }
 
-.img {
-  border: 1px solid blue;
-  border-radius: 40px;
-  height: 78px;
-  width: 78px;
-  padding: 25px;
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin: 10px;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row,
-  .navbar {
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
