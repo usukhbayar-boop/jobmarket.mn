@@ -8,6 +8,10 @@ module.exports = {
           filename: 'index.html',
           template: './src/index.html'
       }),
+      new HtmlWebpackPlugin({
+        filename: 'signin.html',
+        template: './src/signin.html'
+      }),
   ],
   output: {
     filename: 'main.js',
